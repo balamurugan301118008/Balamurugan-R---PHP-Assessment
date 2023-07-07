@@ -1,5 +1,4 @@
 <?php
-
 $app['db']= (new Database())->db;
 
 $user=$_SESSION['login']['name'];
@@ -29,6 +28,20 @@ $_SESSION['AdminId'] = $values->id;
     </form>
 </div>
 <div>
+    <form action="/addUser" method="post">
+        <button type="submit">Add users</button>
+    </form>
+</div>
+<div>
+    <form action="/addArtist" method="post">
+        <button type="submit">Add Artist</button>
+    </form>
+</div>
+<form action="/Alluser" method="post">
+    <button type="submit">All Exiting users</button>
+</form>
+</div>
+<div>
     <table>
         <h2>List of song are here..</h2>
         <tr>
@@ -39,25 +52,33 @@ $_SESSION['AdminId'] = $values->id;
             <tr>
                 <td><?php  echo $values->artist_name ?></td>
                 <td><?php echo $values->song_name ?></td>
-<!--                <td><img src="--><?php //echo $values->song_image ?><!--" alt=""></td>-->
-<!--                <td><audio controls><source src="--><?php //echo $values->song_path ?><!--" type="audio/ogg"></audio></td>-->
+                <td><img src="<?php echo $values->song_image ?>" alt="" width="50px" height="50px"></td>
             </tr>
         <?php endforeach; ?>
     </table>
 </div>
+
 <div class="ExitingUser">
-    <h3>Existing Users</h3>
+    <h3>Free Users</h3>
     <?php foreach ($users as $user): ?>
-    <ul>
+    <ol>
         <li><?php echo $user->user_name ?></li>
-    </ul>
+    </ol>
+    <?php endforeach; ?>
+</div>
+<div class="premiumUser">
+    <h3>Premium Users</h3>
+    <?php foreach ($premiumUsers as $premiumUser): ?>
+        <ol>
+            <li><?php echo $premiumUser->user_name ?></li>
+        </ol>
     <?php endforeach; ?>
 </div>
 </body>
 </html>
 <style>
     table {
-        width: 50%;
+        width: 34%;
         border-collapse: collapse;
         border: 1px solid;
         text-align: center;
@@ -71,9 +92,16 @@ $_SESSION['AdminId'] = $values->id;
         border: 1px solid;
     }
     .ExitingUser {
+        cursor: pointer;
         float: right;
         position: relative;
-        bottom: 200px;
+        bottom: 500px;
         right: 200px;
+    }
+    .premiumUser {
+        cursor: pointer;
+        position: relative;
+        left: 564px;
+        bottom: 500px;
     }
 </style>

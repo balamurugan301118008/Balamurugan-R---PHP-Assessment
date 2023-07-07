@@ -3,8 +3,11 @@ try{
     $songName = $_POST['song_name'];
     $artistName = $_POST['artist_name'];
     $adminId = $_POST['AdminId'];
-
-    $statement = $app['db']->query("INSERT INTO songs (user_id,song_name,artist_name)VALUES('$adminId','$songName','$artistName')");
+    $imge = $_FILES['songImage']['name'];
+    $path = 'Songs/'.$imge;
+    move_uploaded_file($_FILES['songImage']['tmp_name'],$path);
+//    var_dump($path);
+    $statement = $app['db']->query("INSERT INTO songs (user_id,song_name,artist_name,song_image)VALUES('$adminId','$songName','$artistName','$path')");
 
     $fetchSongList = $app['db']->query("SELECT * FROM songs");
     $songs = $fetchSongList->fetchAll(PDO::FETCH_OBJ);

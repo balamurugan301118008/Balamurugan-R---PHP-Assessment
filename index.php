@@ -16,6 +16,11 @@ $router->get('/login_logic','Controllers/Login/login_logics.php')->only('guest')
 $router->get('/logout','Controllers/Logout/logout.php')->only('auth');
 $router->get('/addSongs','Controllers/addSongs.php');
 $router->post('/songsLogic','Controllers/songLogic.php');
+$router->get('/addUser','Controllers/addUser.php');
+$router->post('/userLogic','Controllers/userLogic.php');
+$router->get('/addArtist','Controllers/artist.php');
+$router->get('/Alluser','Controllers/allUsers.php');
+$router->post('/updatePremium','Controllers/updatePremiumUser.php');
 
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
