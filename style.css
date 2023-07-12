@@ -33,68 +33,47 @@ input[type ="text"]:invalid{
     color: rgb(245, 112, 112);
     animation: shake .4s 2;
 }
-@keyframes shake{
-    25%{
-        translate: 6px 0;
-    }
-    50%{
-        translate: -6px 0;
-    }
-    75%{
-        translate: 6px 0;
-    }
-}
-label{
-    display: table-row-group;
-    color: revert;
-    font-size: 20px;
-    position: relative;
-    top: 18px;
-}
-.signup {
-    margin-top: 30px;
-}
-button {
-    margin: 18px 66px;
-    height: 36px;
-    width: 142px;
-    font-size: 18px;
-    color: #ced9eb;
-    background-color:#506380 ;
-    border-style: none;
-    border-radius: 2px;
-}
-button:hover{
-    opacity: 0.9;
-}
-span {
-    font-size: 18px;
-    color: unset;
-}
+
 a {
-    text-decoration: none;
-    padding-left: 8px;
-}
-a.logout {
-    width: 86px;
-    height: 38px;
-    background-color: skyblue;
-    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
     font-size: 20px;
-    border-style: none;
-    display: grid;
-    place-items: center;
-    border-radius: 2px;
-    float: right;
-    margin: 0px 23px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #8d8d8d;
+    color: #c7fffd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 56px 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-button.editProfile {
-    margin: 16px 4px;
-    height: 29px;
-    width: 68px;
-    font-size: 17px;
-    color: #ced9eb;
-    background-color: #506380;
-    border-style: none;
-    border-radius: 2px;
+    a:hover {
+        transition: ease-in-out 0.5s;
+        background-color: cadetblue;
+        color: white;
+    }
+
+    a:active {
+        background-color: #3e8e41;
+    }
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 34px auto;
+        }
+
+    .action {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 157px;
 }
